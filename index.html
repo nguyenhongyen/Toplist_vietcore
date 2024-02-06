@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="content-language" content="vi">
+	<title>Tốt Nhất Cần Thơ - cantho.top</title>
+	
+	<link rel='preconnect' href='https://fonts.googleapis.com'>
+	<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+	<link href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap'
+	      rel='stylesheet'>
+	
+	<link media="all" href="https://cantho.top/view/public/assets/lib/leaflet/leaflet.css?ver=1" type="text/css"
+	      rel="stylesheet"/>
+	<link media="all" href="https://cantho.top/view/public/assets/lib/bootstrap5/bootstrap.min.css?ver=1"
+	      type="text/css" rel="stylesheet"/>
+	<link media="all" href="https://cantho.top/view/public/assets/lib/select2/css/select2.min.css?ver=1" type="text/css"
+	      rel="stylesheet"/>
+	<link media="all" href="https://cantho.top/view/public/assets/lib/dropzone/dropzone.min.css?ver=1" type="text/css"
+	      rel="stylesheet"/>
+	<link media="all" href="https://cantho.top/view/public/assets/lib/sweetalert2/sweetalert2.min.css?ver=1"
+	      type="text/css" rel="stylesheet"/>
+	<link media="all" href="https://cantho.top/view/public/assets/fonts/fontawesome/all.min.css?ver=1" type="text/css"
+	      rel="stylesheet"/>
+	<link media="all" href="https://cantho.top/view/public/assets/lib/datatable/datatables.min.css?ver=1"
+	      type="text/css" rel="stylesheet"/>
+	<link media="all" href="https://cantho.top/view/toplist_pc/assets/libs/swiper/swiper-bundle.min.css?ver=1"
+	      type="text/css" rel="stylesheet"/>
+	<link media="all" href="https://cantho.top/view/toplist_pc/assets/libs/fancybox/fancybox.min.css?ver=1"
+	      type="text/css" rel="stylesheet"/>
+	<link media="all" href="https://cantho.top/view/toplist_pc/assets/libs/tagsinput/mab-jquery-taginput.css?ver=1"
+	      type="text/css" rel="stylesheet"/>
+	<link media="all" href="https://cantho.top/view/toplist_pc/assets/css/base.css?ver=1" type="text/css"
+	      rel="stylesheet"/>
+	<link media="all" href="https://cantho.top/view/toplist_pc/assets/css/style.css?ver=1" type="text/css"
+	      rel="stylesheet"/>
+	
+	<link rel="stylesheet" href="./fonts/all.min.css">
+	<link rel="stylesheet" href="./css/gioithieu.css">
+</head>
+
+<body>
+<header id="header" class="header">
+	<div class="header-main">
+		<div class="container-fluid">
+			<div class="header-inner hstack gap-20px">
+				<div class="header-logo">
+					<a href="https://cantho.top/" aria-label="Tốt Nhất Cần Thơ" class="d-inline-flex align-middle">
+						<img src="https://cantho.top/public/upload/logo/CANTHOTOP.png" height="50" width="180"
+						     class="mw-100" alt="Tốt Nhất Cần Thơ">
+					</a>
+				</div>
+				<div class="header-search">
+					<form action="" id="formSearchHeaderPc">
+						<div class="position-relative hstack search-box">
+							<label for="search-key" class="d-block w-100">
+								<input type="text" id="search-key" class="form-control search-input"
+								       placeholder="Từ khóa tìm kiếm..." value="">
+							</label>
+							<button aria-label="Tìm kiếm" type="submit"
+							        class="search-button hstack justify-content-center p-0 border-0 text-white">
+								<i class="far fa-search"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="header-category position-relative">
+					<button type="button" aria-label="Mở danh mục"
+					        class="category-button hstack gap-8px p-0 border-0 bg-transparent">
+						<span class="category-button_icon vstack align-items-center justify-content-center position-relative">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+						<span class="category-button_text">
+							Danh mục
+							<i class="fas fa-caret-down"></i>
+						</span>
+					</button>
+					<div class="category-dropdown position-absolute pseudo bg-white vstack">
+						<div class="category-list category-primary hstack flex-wrap">
+							<a href="https://cantho.top/tim-kiem/moi-nhat" aria-label="Name category"
+							   class="category-tag hstack justify-content-center">
+								Mới nhất </a>
+							<a href="https://cantho.top/tim-kiem/ngon-nhat" aria-label="Name category"
+							   class="category-tag hstack justify-content-center">
+								Ngon nhất </a>
+							<a href="https://cantho.top/tim-kiem/dep-nhat" aria-label="Name category"
+							   class="category-tag hstack justify-content-center">
+								Đẹp nhất </a>
+							<a href="https://cantho.top/tim-kiem/tot-nhat" aria-label="Name category"
+							   class="category-tag hstack justify-content-center">
+								Tốt nhất </a>
+						</div>
+						<div class="category-list category-secondary hstack flex-wrap">
+							<a href="https://cantho.top/tim-kiem/du-lich" aria-label="Du lịch"
+							   class="category-tag hstack justify-content-center">
+								Du lịch </a>
+							<a href="https://cantho.top/tim-kiem/trong-nuoc" aria-label="Trong nước"
+							   class="category-tag hstack justify-content-center">
+								Trong nước </a>
+							<a href="https://cantho.top/tim-kiem/giai-tri" aria-label="Giải trí"
+							   class="category-tag hstack justify-content-center">
+								Giải trí </a>
+							<a href="https://cantho.top/tim-kiem/phim-dien-anh" aria-label="Phim điện ảnh"
+							   class="category-tag hstack justify-content-center">
+								Phim điện ảnh </a>
+							<a href="https://cantho.top/tim-kiem/nuoc-ngoai" aria-label="Nước ngoài"
+							   class="category-tag hstack justify-content-center">
+								Nước ngoài </a>
+							<a href="https://cantho.top/tim-kiem/van-hoa" aria-label="Văn hóa"
+							   class="category-tag hstack justify-content-center">
+								Văn hóa </a>
+							<a href="https://cantho.top/tim-kiem/dac-san" aria-label="Đặc sản"
+							   class="category-tag hstack justify-content-center">
+								Đặc sản </a>
+							<a href="https://cantho.top/tim-kiem/mien-tay" aria-label="Miền Tây"
+							   class="category-tag hstack justify-content-center">
+								Miền Tây </a>
+							<a href="https://cantho.top/tim-kiem/am-thuc" aria-label="Ẩm thực"
+							   class="category-tag hstack justify-content-center">
+								Ẩm thực </a>
+							<a href="https://cantho.top/tim-kiem/cong-nghe" aria-label="Công nghệ"
+							   class="category-tag hstack justify-content-center">
+								Công nghệ </a>
+							<a href="https://cantho.top/tim-kiem/dien-thoai" aria-label="Điện thoại"
+							   class="category-tag hstack justify-content-center">
+								Điện thoại </a>
+							<a href="https://cantho.top/tim-kiem/quan-an" aria-label="Quán ăn"
+							   class="category-tag hstack justify-content-center">
+								Quán ăn </a>
+							<a href="https://cantho.top/tim-kiem/dac-san" aria-label="Đặc sản"
+							   class="category-tag hstack justify-content-center">
+								Đặc sản </a>
+						</div>
+						<div class="category-list category-accent hstack flex-wrap">
+							<a href="https://cantho.top/tim-kiem/an-vat" aria-label="ăn vặt"
+							   class="category-tag hstack justify-content-center">
+								ăn vặt </a>
+							<a href="https://cantho.top/tim-kiem/dien-thoai-iphone" aria-label="điện thoại iphone"
+							   class="category-tag hstack justify-content-center">
+								điện thoại iphone </a>
+							<a href="https://cantho.top/tim-kiem/iphone" aria-label="iphone"
+							   class="category-tag hstack justify-content-center">
+								iphone </a>
+							<a href="https://cantho.top/tim-kiem/tra-sua" aria-label="trà sữa"
+							   class="category-tag hstack justify-content-center">
+								trà sữa </a>
+							<a href="https://cantho.top/tim-kiem/tra-chanh" aria-label="trà chanh"
+							   class="category-tag hstack justify-content-center">
+								trà chanh </a>
+							<a href="https://cantho.top/tim-kiem/hu-tieu" aria-label="hủ tiếu"
+							   class="category-tag hstack justify-content-center">
+								hủ tiếu </a>
+							<a href="https://cantho.top/tim-kiem/quan-chay" aria-label="quán chay"
+							   class="category-tag hstack justify-content-center">
+								quán chay </a>
+							<a href="https://cantho.top/tim-kiem/am-thuc" aria-label="ẩm thực"
+							   class="category-tag hstack justify-content-center">
+								ẩm thực </a>
+							<a href="https://cantho.top/tim-kiem/can-tho" aria-label="cần thơ"
+							   class="category-tag hstack justify-content-center">
+								cần thơ </a>
+							<a href="https://cantho.top/tim-kiem/banh-ngot" aria-label="bánh ngọt"
+							   class="category-tag hstack justify-content-center">
+								bánh ngọt </a>
+							<a href="https://cantho.top/tim-kiem/tag2" aria-label="tag2"
+							   class="category-tag hstack justify-content-center">
+								tag2 </a>
+							<a href="https://cantho.top/tim-kiem/xay-dung" aria-label="xây dựng"
+							   class="category-tag hstack justify-content-center">
+								xây dựng </a>
+							<a href="https://cantho.top/tim-kiem/test" aria-label="test"
+							   class="category-tag hstack justify-content-center">
+								test </a>
+							<a href="https://cantho.top/tim-kiem/hieu-qua" aria-label="hiệu quả"
+							   class="category-tag hstack justify-content-center">
+								hiệu quả </a>
+							<a href="https://cantho.top/tim-kiem/chat-luong" aria-label="chất lượng"
+							   class="category-tag hstack justify-content-center">
+								chất lượng </a>
+						</div>
+					</div>
+				</div>
+				<div class="header-social hstack gap-10px ms-lg-auto align-self-center">
+					<a href="https://www.facebook.com/vietcore"
+					   class="social-item rounded-circle hstack justify-content-center social-facebook"
+					   aria-label="Fanpage - Tốt Nhất Cần Thơ" rel="nofollow" target="_blank">
+						<i class="fab fa-facebook-square"></i>
+					</a>
+					<a href="https://www.youtube.com/"
+					   class="social-item rounded-circle hstack justify-content-center social-youtube"
+					   aria-label="Youtube - Tốt Nhất Cần Thơ" rel="nofollow" target="_blank">
+						<i class="fab fa-youtube"></i>
+					</a>
+					<a href="https://zalo.me/0912902951"
+					   class="social-item rounded-circle hstack justify-content-center social-zalo"
+					   aria-label="Chat zalo - Tốt Nhất Cần Thơ" rel="nofollow" target="_blank">
+						<img src="https://cantho.top/public/upload/theme/zalo.svg" height="20px" width="20px"
+						     class="img-fluid" alt="Chat zalo - Tốt Nhất Cần Thơ">
+					</a>
+				</div>
+				<div class="header-user hstack gap-10px">
+					<div class="header-button hstack gap-10px align-self-center">
+						<a href="" class="button-item facebook-button hstack text-white gap-5px"
+						   aria-label="Đăng nhập facebook">
+							<i class="fab fa-facebook-f"></i>Đăng nhập facebook
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-------header----->
+<main>
+	<section class="section-introduce position-relative overflow-hidden  section-gap">
+		<!--<img src="./img/anhbia1.png" class="introduce-decor-1" alt="Ảnh decor">-->
+		<div class="container position-relative z-index-3">
+			<div class="row justify-content-center ">
+				<div class="col-xl-12">
+					<div class="section-heading">
+						<div class="heading-title text-center">
+							<span>Cantho.top</span> website chuyên nhận xét và xếp hạng<br> các doanh nghiệp, cửa hàng &
+							tiện ích uy tín trên nhiều lĩnh vực khác nhau tại Cần Thơ.
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row justify-content-xl-between justify-content-center align-items-center  ">
+				<div class="col-xl-6 col-lg-8 pb-5 pb-xl-0">
+					<div class="section-introduce__right ">
+						<img src="./img/gioithieucanthotop.png" class="w-100 h-auto transition-default"
+						     alt="HÌnh ảnh giới thiệu">
+					</div>
+				</div>
+				<div class="col-xl-5">
+					<div class="section-heading">
+						<div class="heading-description">
+							Đây là một trong những website mang lại cho bạn đọc những cái nhìn khách quan, chính xác với
+							thực tế nhất hiện nay.
+						</div>
+					</div>
+					<div class="section-introduce__wrap">
+						<div class="section-introduce__item">
+							<div class="introduce-item__number">01</div>
+							<div class="introduce-item__content">
+								<div class="introduce-item__title">
+									Với sứ mệnh
+								</div>
+								<div class="introduce-item__text">
+									Thông tin nhanh và chính xác Cantho.top đã xây dựng được một thương hiệu uy tín
+									trong cộng đồng người dùng.
+								</div>
+							</div>
+						</div>
+						<div class="section-introduce__item">
+							<div class="introduce-item__number">02</div>
+							<div class="introduce-item__content">
+								<div class="introduce-item__title">
+									Đội ngũ cộng tác viên
+								</div>
+								<div class="introduce-item__text">
+									Trang web sở hữu đội ngũ cộng tác viên giàu kinh nghiệm đang sống và làm việc tại
+									Cần Thơ, cam kết mang đến cho bạn những bài đánh giá đơn vị chất lượng, đáng tin
+									cậy.
+								</div>
+							</div>
+						</div>
+						<div class="section-introduce__item">
+							<div class="introduce-item__number">03</div>
+							<div class="introduce-item__content">
+								<div class="introduce-item__title">
+									Thông tin hữu ích và khách quan
+								</div>
+								<div class="introduce-item__text">
+									Cantho.top không chỉ tập trung vào việc đánh giá, mà còn cung cấp cho bạn những
+									thông tin hữu ích và khách quan để giúp bạn đưa ra quyết định thông minh.
+								</div>
+							</div>
+						</div>
+					
+					
+					</div>
+				
+				</div>
+			
+			</div>
+		
+		</div>
+	</section>
+	<section class="section-why section-gap overflow-hidden">
+		<div class="container">
+			<div class="section-heading">
+				<div class="heading-title text-center">
+					Tại sao Cantho.top ra đời?
+				</div>
+			</div>
+			<div class="section-why__wrap pt-5">
+				<div class="row row-cols-xl-3 row-cols-lg-3 row-cols-1 g-xl-5 g-4 justify-content-center">
+					<div class="col pb-lg-0 pb-5">
+						<div class="section-why__item item-1">
+							<div class="section-why__icon icon-1">
+								<svg xmlns="http://www.w3.org/2000/svg" height="512" viewBox="0 0 64 64" width="512"><g id="Processor_security" data-name="Processor security"><path d="m27 11h2v2h-2z"></path><path d="m53 35h2v2h-2z"></path><path d="m35 51h2v2h-2z"></path><path d="m27 54h2v2h-2z"></path><path d="m11 31h2v2h-2z"></path><path d="m35 11h2v2h-2z"></path><path d="m51 27h2v2h-2z"></path><path d="m46 17h2v2h-2z"></path><path d="m16 17h2v2h-2z"></path><path d="m46 45h2v2h-2z"></path><path d="m16 45h2v2h-2z"></path><path d="m31.882 31a2.994 2.994 0 0 0 -.882 5.822v2.178h2v-2.185a2.993 2.993 0 0 0 -1.118-5.815zm1.118 2.961a1 1 0 0 1 -.96 1.039 1 1 0 0 1 -.719-.266 1 1 0 0 1 .639-1.734h.04a1 1 0 0 1 1 .96z"></path><path d="m37 28.184v-1.184a5 5 0 0 0 -10 0v1.184a3 3 0 0 0 -2 2.816v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-8a3 3 0 0 0 -2-2.816zm-8-1.184a3 3 0 0 1 6 0v1h-6zm8 12a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1-1v-8a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1z"></path><path d="m59 41a2.951 2.951 0 0 0 -1.285.3l-2.3-2.3h-9.415v-2h5v-2h-5v-2h5.236l5.687-2.844a2.994 2.994 0 1 0 -.923-2.156 2.9 2.9 0 0 0 .037.363l-5.273 2.637h-4.764v-2h3v-2h-3v-2h4.414l3.3-3.3a2.951 2.951 0 0 0 1.286.3 3 3 0 1 0 -3-3 2.951 2.951 0 0 0 .3 1.285l-2.714 2.715h-3.586a5.006 5.006 0 0 0 -5-5v-2.586l5.715-5.714a2.951 2.951 0 0 0 1.285.3 3 3 0 1 0 -3-3 2.951 2.951 0 0 0 .3 1.285l-6.3 6.3v3.415h-2v-3h-2v3h-2v-7.184a3 3 0 1 0 -2 0v7.184h-2v-3h-2v3h-2v-7.414l-4.3-4.3a2.951 2.951 0 0 0 .3-1.286 3 3 0 1 0 -3 3 2.951 2.951 0 0 0 1.285-.3l3.715 3.714v6.586a5.006 5.006 0 0 0 -5 5h-3.586l-2.714-2.715a2.951 2.951 0 0 0 .3-1.285 3 3 0 1 0 -3 3 2.951 2.951 0 0 0 1.285-.3l3.3 3.3h4.415v2h-6.362l-5.238 4.364a2.953 2.953 0 0 0 -1.4-.364 3 3 0 1 0 3 3 2.972 2.972 0 0 0 -.237-1.168l4.599-3.832h5.638v2h-3v2h3v2h-9v2h9v2h-5.535l-4.03 6.044a2.968 2.968 0 0 0 -.435-.044 3.028 3.028 0 1 0 2.21.988l3.325-4.988h4.465a5.006 5.006 0 0 0 5 5v6.586l-3.715 3.714a2.951 2.951 0 0 0 -1.285-.3 3 3 0 1 0 3 3 2.951 2.951 0 0 0 -.3-1.285l4.3-4.3v-7.415h2v6h2v-6h2v8.554l6.074 3.8a3.044 3.044 0 1 0 1.069-1.691l-5.143-3.217v-7.446h2v3h2v-3h2v8h7.184a3 3 0 1 0 0-2h-5.184v-6a5.006 5.006 0 0 0 5-5h8.586l1.714 1.715a2.951 2.951 0 0 0 -.3 1.285 3 3 0 1 0 3-3zm0-14a1 1 0 1 1 -1 1 1 1 0 0 1 1-1zm-4-9a1 1 0 1 1 -1 1 1 1 0 0 1 1-1zm-7-12a1 1 0 1 1 -1 1 1 1 0 0 1 1-1zm-16 1a1 1 0 1 1 -1 1 1 1 0 0 1 1-1zm-15-2a1 1 0 1 1 1 1 1 1 0 0 1 -1-1zm-9 14a1 1 0 1 1 1 1 1 1 0 0 1 -1-1zm-3 16a1 1 0 1 1 1-1 1 1 0 0 1 -1 1zm3 14a1 1 0 1 1 1-1 1 1 0 0 1 -1 1zm10 11a1 1 0 1 1 1-1 1 1 0 0 1 -1 1zm22-2a1 1 0 1 1 -1 1 1 1 0 0 1 1-1zm9-6a1 1 0 1 1 -1 1 1 1 0 0 1 1-1zm-5-11a3 3 0 0 1 -3 3h-18a3 3 0 0 1 -3-3v-18a3 3 0 0 1 3-3h18a3 3 0 0 1 3 3zm15 4a1 1 0 1 1 1-1 1 1 0 0 1 -1 1z"></path></g></svg>
+							</div>
+							<div class="section-why__content">
+								<h5 class="section-why__title">Thị trường cung ứng sản phẩm/dịch vụ khá phức tạp</h5>
+								<div class="section-why__text">
+									Người tiêu dùng hoang mang với vô số thông tin trên không gian mạng, chẳng thể phân biệt được cái nào tốt, cái
+									nào không.
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="col pb-lg-0 pb-5">
+						<div class="section-why__item item-2">
+							<div class="section-why__icon icon-2">
+								<svg xmlns="http://www.w3.org/2000/svg" height="512" viewBox="0 0 520 520" width="512"><g id="_x39_13-Business_x2C__Community_x2C__Team_x2C__Work"><g><circle cx="470" cy="340" r="10"></circle><circle cx="470" cy="180" r="10"></circle><circle cx="60" cy="180" r="10"></circle><circle cx="350" cy="340" r="10"></circle><circle cx="60" cy="330" r="10"></circle><circle cx="220" cy="230" r="10"></circle><circle cx="280" cy="200" r="10"></circle><circle cx="40" cy="460" r="10"></circle><path d="m439.104 394.002c5.75-6.781 9.229-15.547 9.229-25.113 0-21.443-17.445-38.889-38.889-38.889s-38.89 17.445-38.89 38.889c0 9.566 3.479 18.332 9.23 25.113-6.388 3.277-12.072 7.727-16.771 13.069-9.023-21.146-27.664-37.228-50.393-42.754 11.074-11.067 17.935-26.351 17.935-43.206 0-33.697-27.414-61.111-61.11-61.111-33.697 0-61.111 27.414-61.111 61.111 0 16.855 6.86 32.139 17.934 43.205-22.728 5.526-41.369 21.609-50.392 42.754-4.7-5.343-10.385-9.792-16.772-13.068 5.751-6.781 9.23-15.547 9.23-25.113 0-21.443-17.446-38.889-38.889-38.889s-38.889 17.445-38.889 38.889c0 9.566 3.479 18.332 9.229 25.113-18.322 9.399-30.896 28.474-30.896 50.442v25.556c0 5.522 4.477 10 10 10h91.111v10c0 5.522 4.477 10 10 10h178.889c5.522 0 10-4.478 10-10v-10h91.111c5.522 0 10-4.478 10-10v-25.556c0-21.968-12.574-41.043-30.896-50.442zm-29.66-44.002c10.415 0 18.889 8.474 18.889 18.889 0 10.409-8.463 18.878-18.869 18.889h-.039c-10.407-.011-18.87-8.479-18.87-18.889 0-10.415 8.473-18.889 18.889-18.889zm-139.999-70c22.668 0 41.11 18.442 41.11 41.111 0 22.668-18.442 41.11-41.11 41.11-22.669 0-41.111-18.442-41.111-41.11 0-22.669 18.442-41.111 41.111-41.111zm-140 70c10.416 0 18.889 8.474 18.889 18.889 0 10.409-8.463 18.878-18.87 18.889h-.038c-10.406-.011-18.87-8.479-18.87-18.889 0-10.415 8.474-18.889 18.889-18.889zm31.666 110v-11.667c0-5.522-4.477-10-10-10s-10 4.478-10 10v11.667h-23.333v-11.667c0-5.522-4.477-10-10-10s-10 4.478-10 10v11.667h-8.889v-15.556c0-20.218 16.449-36.667 36.667-36.667h7.778c20.205 0 36.645 16.429 36.666 36.629v15.594zm187.778 20h-31.111v-18.333c0-5.522-4.478-10-10-10s-10 4.478-10 10v18.333h-56.667v-18.333c0-5.522-4.477-10-10-10s-10 4.478-10 10v18.333h-31.111c0-1.491 0-46.081 0-44.111 0-29.592 24.075-53.666 53.667-53.666h51.556c29.592 0 53.666 24.074 53.666 53.666v34.111zm101.111-20h-8.889v-11.667c0-5.522-4.478-10-10-10s-10 4.478-10 10v11.667h-23.334v-11.667c0-5.522-4.478-10-10-10s-10 4.478-10 10v11.667h-8.889v-15.556c0-20.218 16.449-36.667 36.667-36.667h7.777c20.218 0 36.667 16.449 36.667 36.667v15.556z"></path><path d="m473.566 216.993-51.504-7.764c-1.345-6.679-3.112-13.282-5.284-19.75l40.739-32.457c3.87-3.083 4.903-8.534 2.43-12.82l-15.194-26.326c-2.474-4.286-7.712-6.116-12.316-4.309l-48.539 19.063c-4.527-5.096-9.355-9.914-14.439-14.409l19.106-48.514c1.813-4.605-.015-9.845-4.3-12.322l-26.385-15.253c-4.287-2.48-9.741-1.446-12.826 2.426l-32.475 40.762c-6.46-2.149-13.055-3.914-19.721-5.277l-7.716-51.525c-.733-4.896-4.938-8.519-9.89-8.519h-30.447c-4.947 0-9.151 3.617-9.888 8.509l-7.77 51.533c-6.667 1.363-13.265 3.128-19.727 5.278l-32.475-40.762c-3.088-3.875-8.547-4.907-12.834-2.421l-26.326 15.253c-4.276 2.478-6.102 7.708-4.294 12.308l19.063 48.538c-5.074 4.506-9.887 9.319-14.394 14.394l-48.538-19.063c-4.601-1.807-9.831.019-12.308 4.295l-15.253 26.326c-2.484 4.287-1.454 9.747 2.421 12.834l40.762 32.475c-2.15 6.462-3.915 13.059-5.278 19.727l-51.534 7.769c-4.892.737-8.509 4.941-8.509 9.888v30.448c0 4.951 3.623 9.156 8.519 9.89l51.525 7.716c1.855 9.07 4.453 18.008 7.751 26.654 1.972 5.17 7.761 7.745 12.908 5.778 5.16-1.968 7.747-7.747 5.779-12.907-3.686-9.661-6.38-19.731-8.008-29.932-.687-4.305-4.083-7.668-8.394-8.313l-50.08-7.5v-13.229l50.09-7.551c4.307-.649 7.698-4.011 8.384-8.312 1.628-10.2 4.322-20.271 8.008-29.933 1.552-4.068.293-8.672-3.112-11.385l-39.604-31.553 6.622-11.428 47.184 18.531c4.054 1.59 8.666.38 11.412-2.996 6.515-8.005 13.875-15.366 21.878-21.877 3.375-2.747 4.587-7.361 2.996-11.412l-18.531-47.184 11.428-6.622 31.553 39.605c2.712 3.405 7.317 4.662 11.386 3.112 9.661-3.686 19.731-6.38 29.931-8.008 4.301-.686 7.663-4.077 8.313-8.384l7.55-50.088h13.228l7.5 50.08c.646 4.311 4.01 7.708 8.314 8.394 10.2 1.627 20.271 4.322 29.932 8.008 4.068 1.552 8.674.293 11.386-3.112l31.558-39.611 11.472 6.632-18.577 47.171c-1.601 4.064-.378 8.697 3.019 11.442 7.995 6.46 15.366 13.814 21.91 21.856 2.746 3.375 7.359 4.586 11.412 2.996l47.171-18.526 6.588 11.414-39.616 31.562c-3.42 2.725-4.673 7.355-3.094 11.432 3.727 9.625 6.412 19.663 7.981 29.834.667 4.324 4.066 7.712 8.393 8.364l50.089 7.551v13.229l-50.08 7.5c-4.329.648-7.734 4.038-8.401 8.365-1.569 10.172-4.255 20.21-7.981 29.833-1.994 5.15.563 10.942 5.714 12.937 5.151 1.996 10.942-.563 12.937-5.714 3.354-8.659 5.967-17.612 7.799-26.705l51.495-7.712c4.896-.733 8.519-4.938 8.519-9.89v-30.448c-.004-4.948-3.621-9.152-8.513-9.889z"></path><path d="m370 240c0-60.654-49.346-110-110-110s-110 49.346-110 110c0 5.523 4.477 10 10 10s10-4.477 10-10c0-49.626 40.374-90 90-90s90 40.374 90 90c0 5.523 4.478 10 10 10s10-4.477 10-10z"></path><path d="m70 100c16.542 0 30-13.458 30-30s-13.458-30-30-30-30 13.458-30 30 13.458 30 30 30zm0-40c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10z"></path><path d="m450 100c22.056 0 40-17.944 40-40s-17.944-40-40-40-40 17.944-40 40 17.944 40 40 40zm0-60c11.028 0 20 8.972 20 20s-8.972 20-20 20-20-8.972-20-20 8.972-20 20-20z"></path></g></g></svg>
+							</div>
+							<div class="section-why__content">
+								<h5 class="section-why__title">Không có thời gian tìm kiếm và chọn lọc</h5>
+								<div class="section-why__text">
+									Người dùng cũng không có nhiều thời gian để tìm kiếm và so sánh chất lượng của các đơn
+									vị cùng ngành.
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="col ">
+						<div class="section-why__item item-3">
+							<div class="section-why__icon icon-3">
+								<svg xmlns="http://www.w3.org/2000/svg" height="512" viewBox="0 0 512 512" width="512"><g id="_OUTLINE" data-name=" OUTLINE"><path d="m472 16h-432a24.0275 24.0275 0 0 0 -24 24v352a24.0275 24.0275 0 0 0 24 24h165.24774l-19.2 64h-26.04774v16h192v-16h-26.04773l-19.20007-64h165.2478a24.0275 24.0275 0 0 0 24-24v-352a24.0275 24.0275 0 0 0 -24-24zm-162.7522 464h-106.49554l19.2-64h68.09546zm170.7522-88a8.00917 8.00917 0 0 1 -8 8h-432a8.00917 8.00917 0 0 1 -8-8v-24h448zm0-40h-448v-312a8.00917 8.00917 0 0 1 8-8h432a8.00917 8.00917 0 0 1 8 8z"></path><path d="m440 152h-105.37256a7.94677 7.94677 0 0 1 -5.65723-2.34375l-22.627-22.62695a23.84254 23.84254 0 0 0 -16.97065-7.0293h-89.37256a24.0275 24.0275 0 0 0 -24 24v168a24.0275 24.0275 0 0 0 24 24h240a24.0275 24.0275 0 0 0 24-24v-136a24.0275 24.0275 0 0 0 -24-24zm8 160a8.00917 8.00917 0 0 1 -8 8h-240a8.00917 8.00917 0 0 1 -8-8v-168a8.00917 8.00917 0 0 1 8-8h89.37256a7.94677 7.94677 0 0 1 5.65723 2.34375l22.627 22.62695a23.84254 23.84254 0 0 0 16.97065 7.0293h105.37256a8.00917 8.00917 0 0 1 8 8z"></path><path d="m266.343 194.343-45.656 45.657 45.656 45.657 11.314-11.314-34.344-34.343 34.344-34.343z"></path><path d="m282.817 236h82.365v15.999h-82.365z" transform="matrix(.486 -.874 .874 .486 -46.637 408.743)"></path><path d="m362.343 205.657 34.344 34.343-34.344 34.343 11.314 11.314 45.656-45.657-45.656-45.657z"></path><path d="m202.794 64 12.955 30.219 28.57 11.838 30.579-12.219 15.819 15.819 11.313-11.314-23.275-23.277-34.326 13.717-16.54-6.853-14.546-33.93h-42.686l-14.545 33.93-16.541 6.853-34.325-13.717-30.179 30.18 13.716 34.325-6.853 16.54-33.93 14.546v42.686l33.929 14.546 6.854 16.54-13.717 34.325 30.179 30.18 34.326-13.717 17.366 7.196 6.126-14.781-23.382-9.689-30.579 12.219-15.264-15.264 12.219-30.579-11.839-28.571-30.218-12.954v-21.588l30.219-12.954 11.838-28.571-12.219-30.579 15.265-15.264 30.578 12.219 28.57-11.838 12.955-30.219z"></path><path d="m163.56006 134.64844-7.12012-14.32813a80.02808 80.02808 0 0 0 0 143.35938l7.12012-14.32813a64.02857 64.02857 0 0 1 0-114.70312z"></path></g></svg>
+							</div>
+							<div class="section-why__content">
+								<h5 class="section-why__title"> Và đó là lý do<br> Cantho.top ra đời</h5>
+								<div class="section-why__text">
+									Chúng tôi thực hiện việc tổng hợp, nghiên cứu và xếp
+									hạng để bạn dễ dàng đưa ra quyết định cho riêng mình.
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</section>
+	<section class="section-work section-gap overflow-hidden">
+		<div class="container">
+			<!--<div class="section-heading">
+				<div class="heading-title text-center">
+					Chúng tôi hoạt động như thế nào ?
+				</div>
+			</div>-->
+			<div class="row justify-content-center   pb-2">
+				<div class="col-xl-5">
+					<div class="section-work__image">
+						<img src="./img/taisao1.png" class="w-100 h-auto"  alt="">
+					</div>
+				</div>
+				<div class="col-xl-5">
+					<div class="section-work__content">
+						<div class="section-work__subtitle">
+							Cantho.top <span>01</span>
+						</div>
+						<div class="section-work__title">
+							Chúng tôi đã tập hợp một nhóm các cộng tác viên đang sống và làm việc tại chính Cần Thơ
+						</div>
+						<div class="section-work__text">
+							Những người có kỹ năng về chuyên môn và am hiểu về nơi họ đang sống. Họ có nhiệm vụ xâm nhập vào thị trường, lấy thông tin, nghiên cứu và đưa ra những bài viết đánh giá về rất nhiều sản phẩm/dịch vụ
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="row row-cols-xl-2 row-cols-lg-2 row-cols-1 g-4 pb-2">
+				<div class="col">
+					<div class="section-work__image ">
+						<img src="./img/taisao2.png" class="w-100 h-auto" alt="">
+					</div>
+				</div>
+				<div class="col">
+					<div class="section-work__content">
+						<div class="section-work__title">
+							Chọn lọc các sản phẩm/dịch vụ
+						</div>
+						<div class="section-work__text">
+							Đội ngũ của chúng tôi sẽ cùng ngồi lại, dựa trên những dữ liệu đã thu thập được để xác định và chọn ra các sản phẩm/dịch vụ cần lưu ý. Các lựa chọn của nhóm dựa trên bộ tiêu chí bao gồm mức độ uy tín, mức độ phổ biến, những đánh giá từ người dùng v.v.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-cols-xl-2 row-cols-lg-2 row-cols-1 g-4 pb-2">
+				<div class="col">
+					<div class="section-work__content">
+						<div class="section-work__title">
+							Hệ thống tự động xếp hạng và ghi lại
+						</div>
+						<div class="section-work__text">
+							Ngoài ra, chúng tôi sử dụng một hệ thống tự động xếp hạng (nghĩa là sử dụng một số thuật toán phức tạp) và những bí mật riêng trong quá trình tìm kiếm thông tin để dữ liệu được ghi lại và xếp hạng một cách chính xác nhất.
+						
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="section-work__image ">
+						<img src="./img/taisao3.png"  class="w-100 h-auto" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+	<section class="section-introduce-2 section-gap overflow-hidden">
+		<div class="container">
+		
+		</div>
+	</section>
+</main>
+
+
+<script defer src="https://cantho.top/view/public/assets/lib/jquery/jquery.min.js?ver=1"
+        type="text/javascript"></script>
+<script defer src="https://cantho.top/view/public/assets/lib/jquery/jquery-sortable.min.js?ver=1"
+        type="text/javascript"></script>
+<script defer src="https://cantho.top/view/public/assets/lib/leaflet/leaflet.js?ver=1" type="text/javascript"></script>
+<script defer src="https://cantho.top/view/public/assets/lib/nestable/jquery.nestable.js?ver=1"
+        type="text/javascript"></script>
+<script defer src="https://cantho.top/view/public/assets/js/lazyload.min.js?ver=1" type="text/javascript"></script>
+<script defer src="https://cantho.top/view/public/assets/lib/bootstrap5/bootstrap.bundle.min.js?ver=1"
+        type="text/javascript"></script>
+<script defer src="https://cantho.top/view/public/assets/lib/select2/js/select2.min.js?ver=1"
+        type="text/javascript"></script>
+<script defer src="https://cantho.top/view/public/assets/lib/select2/js/select2-vi.min.js?ver=1"
+        type="text/javascript"></script>
+<script defer src="https://cantho.top/view/public/assets/lib/dropzone/dropzone.min.js?ver=1"
+        type="text/javascript"></script>
+<script defer src="https://cantho.top/view/public/assets/lib/sweetalert2/sweetalert2.min.js?ver=1"
+        type="text/javascript"></script>
+<script defer src="https://cantho.top/view/public/assets/lib/datatable/datatables.min.js?ver=1"
+        type="text/javascript"></script>
+<script defer src="https://cantho.top/view/public/assets/js/function.js?ver=1" type="text/javascript"></script>
+<script defer src="https://cantho.top/view/toplist_pc/assets/libs/swiper/swiper-bundle.min.js?ver=1"
+        type="text/javascript"></script>
+<script defer src="https://cantho.top/view/toplist_pc/assets/libs/fancybox/fancybox.min.js?ver=1"
+        type="text/javascript"></script>
+
+<!--------------------thư viện--->
+<script src="./libs/jquery.min.js"></script>
+<script src="./libs/bootstrap/bootstrap.js"></script>
+<script src="./libs/swiper/swiper.min.js"></script>
+<script src="./libs/aos/aos.js"></script>
+<script src="./js/app.js"></script>
+
+</body>
+</html>
